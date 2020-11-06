@@ -11,7 +11,7 @@ s:listen(23,function(c)
     c:send("Filename\tSize\n")
     for f,s in pairs(file.list()) do c:send(f.."   \t"..s.."\n") end
    elseif l:sub(1,3)=="rm " then
-    file.remove(l:match("%S+",5))
+    file.remove(l:match("%S+",4))
    elseif l:sub(1,4)=="cat " then
     fd = file.open(l:match("%S+",5))
     if fd then c:send(fd:read()); fd:close() end
