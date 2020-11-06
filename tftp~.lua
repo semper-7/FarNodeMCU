@@ -3,7 +3,7 @@ u = net.createUDPSocket()
 u:listen(69)
 u:on("receive", function(us, ud, port, ip)
  if ud:byte(2)==1 then
-  fd=file.open(ud:sub(3,#ud-7))
+  fd=file.open(ud:match("%Z+",3))
   function get(i,j)
    j=j+1; if j==256 then j=0; i=i+1 end
    fr=fd:read(512); fl=#fr
@@ -13,7 +13,7 @@ u:on("receive", function(us, ud, port, ip)
  elseif ud:byte(2)==4 then
   if fl==512 then get(ud:byte(3),ud:byte(4)) else fd:close() end
  elseif ud:byte(2)==2 then
-  local f=ud:sub(3,#ud-7)
+  local f=ud:match("%Z+",3)
   file.remove(f)
   fd=file.open(f,"w")
   us:send(port,ip,"\0\4\0\0")

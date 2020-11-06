@@ -10,10 +10,10 @@ s:listen(23,function(c)
    elseif l:sub(1,2)=="ls" then
     c:send("Filename\tSize\n")
     for f,s in pairs(file.list()) do c:send(f.."   \t"..s.."\n") end
-   elseif l:sub(1,2)=="rm" then
-    file.remove(l:sub(4,-3))
-   elseif l:sub(1,3)=="cat" then
-    fd = file.open(l:sub(5,-3))
+   elseif l:sub(1,3)=="rm " then
+    file.remove(l:match("%S+",5))
+   elseif l:sub(1,4)=="cat " then
+    fd = file.open(l:match("%S+",5))
     if fd then c:send(fd:read()); fd:close() end
    elseif l:sub(1,3)=="mem" then
     c:send("Mem free: "..node.heap().."\n")
