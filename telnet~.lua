@@ -1,8 +1,7 @@
 --Telnet server
 s=net.createServer(net.TCP, 30)
 s:listen(23,function(c)
- function so(str) c:send(str) end
- node.output(so, 0)
+ node.output(function(s) c:send(s) end, 0)
   c:on("receive",function(c,l)
    local r=1
    if l:sub(1,4)=="exit" then
