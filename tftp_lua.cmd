@@ -1,6 +1,6 @@
 @echo off
 set S=sed
-rem S=busybox sed
+rem set S=busybox sed
 if "%2"=="" echo Command line: %~n0 IP_adress filename&exit
 mkdir tmp
 %S% -e "/^$/d;s/^[ 	]*//;s/[ 	]*$//" %2 > tmp\%2

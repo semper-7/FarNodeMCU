@@ -20,6 +20,10 @@ s:listen(23,function(c)
    elseif l:sub(1,6)=="reboot" then
     c:close(); tt=tmr.create()
     tt:alarm(500,tmr.ALARM_SINGLE,node.restart)
+   elseif l:find("^[%w-_]+\.lua\r") then
+    local f=l:match("%S+")
+    if file.exists(f) then dofile(f) end
+    f=nil
    else node.input(l); r=nil
    end
    if r then node.input("\r"); r=nil end
