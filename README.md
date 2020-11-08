@@ -3,7 +3,7 @@ Project for ESP8266 NodeMCU. First of all, we created an environment for develop
 To solve the problem, utilities for working with ESP were written in MASM32: lineterm.exe - mini console terminal, netterm.exe - TCP terminal is a simplified analog of nc in linux. Their size is only 3072 bytes.
 Cmd and sh scripts are also created for writing lua scripts to ESP: lua_wr, net_wr and tftp_lua.
 Telnet~.lua and tftp~.lua compatible servers were written accordingly.
-Telnet server with support for simple linux commands: ls, cat, rm, mem, reboot and with the ability to run Lua scripts simply by typing their name in the command line, rather than dofile("file.lua").
+Telnet server with support for simple linux commands: ls, cat, rm, mem, reboot and with the ability to run Lua scripts simply by typing their name in the command line, i.e. file.lua instead dofile("file.lua").
 Tftp server support oktet mode only.
 The "~" character in the file name was used to autorun files in ESP, implemented in init.lua.
 
