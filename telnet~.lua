@@ -1,7 +1,7 @@
 --Telnet server
 s=net.createServer(net.TCP, 30)
 s:listen(23,function(c)
- function so(str) if(c~=nil) then c:send(str) end end
+ function so(str) c:send(str) end
  node.output(so, 0)
   c:on("receive",function(c,l)
    local r=1
