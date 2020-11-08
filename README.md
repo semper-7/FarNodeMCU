@@ -11,10 +11,10 @@ The "~" character in the file name was used to autorun files in ESP, implemented
 ### Windows (more needed utils: lineterm.exe, netterm.exe, sed.exe, busybox.exe)
 #### File forwarding
 ``` cmd
-lua_wr.cmd filename.lua
-net_wr.cmd filename.lua | netterm.exe ip_address 23
-net_wr.cmd filename.lua | busybox.exe nc ip_address 23
-tftp_lua.cmd ip_address filename.lua
+lua_wr.cmd file.lua
+net_wr.cmd file.lua | netterm.exe ip_address 23
+net_wr.cmd file.lua | busybox.exe nc ip_address 23
+tftp_lua.cmd ip_address file.lua
 tftp -i ip_address PUT filename
 tftp -i ip_address GET filename
 ```
@@ -37,8 +37,8 @@ netterm.bat
 ### Linux (all the necessary utilities in busybox):
 #### File forwarding:
 ``` sh
-net_wr.sh filename.lua | nc ip_address 23
-tftp_lua.sh ip_address filename.lua
+net_wr.sh file.lua | nc ip_address 23
+tftp_lua.sh ip_address file.lua
 tftp -p -l local_file -r remote_file ip_address
 tftp -g -l local_file -r remote_file ip_address
 ```
