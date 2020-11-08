@@ -6,7 +6,6 @@ Telnet~.lua and tftp~.lua compatible servers were written accordingly.
 Telnet server with support for simple linux commands: ls, cat, rm, mem, reboot.
 Tftp server support oktet mode only.
 The "~" character in the file name was used to autorun files in ESP, implemented in init.lua.
-Support for linux user: net_wr.sh and tftp_wr.sh. FAR manager for Linux: https://github.com/elfmz/far2l
 
 ## Command line formats (all files in one folder):
 ### Windows (more needed utils: lineterm.exe, netterm.exe, sed.exe, busybox.exe):
@@ -23,6 +22,8 @@ Support for linux user: net_wr.sh and tftp_wr.sh. FAR manager for Linux: https:/
 #### UART terminal:
 * lineterm.exe COM_port_number baudrate
 ### Linux (all the necessary utilities in busybox):
+#### Far manager
+* https://github.com/elfmz/far2l
 #### File forwarding:
 * ./net_wr.sh filename.lua | nc ip_address 23
 * ./tftp_lua.sh ip_address filename.lua
@@ -31,3 +32,9 @@ Support for linux user: net_wr.sh and tftp_wr.sh. FAR manager for Linux: https:/
 #### Telnet:
 * telnet ip_address
 * nc ip_address 23
+
+## Links:
+### Far manager official site
+* https://www.farmanager.com
+### Port for linux:
+* https://github.com/elfmz/far2l
