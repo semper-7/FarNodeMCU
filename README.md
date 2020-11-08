@@ -10,26 +10,36 @@ The "~" character in the file name was used to autorun files in ESP, implemented
 ## Command line formats (all files in one folder):
 ### Windows (more needed utils: lineterm.exe, netterm.exe, sed.exe, busybox.exe):
 #### File forwarding:
-* lua_wr.cmd filename.lua
-* net_wr.cmd filename.lua | netterm.exe ip_address 23
-* net_wr.cmd filename.lua | busybox.exe nc ip_address 23
-* tftp_lua.cmd ip_address filename.lua
-* tftp -i ip_address PUT filename
-* tftp -i ip_address GET filename
+``` cmd
+lua_wr.cmd filename.lua
+net_wr.cmd filename.lua | netterm.exe ip_address 23
+net_wr.cmd filename.lua | busybox.exe nc ip_address 23
+tftp_lua.cmd ip_address filename.lua
+tftp -i ip_address PUT filename
+tftp -i ip_address GET filename
+```
 #### Telnet:
+``` cmd
 * netterm.exe ip_address 23
 * busybox.exe nc ip_address 23
+```
 #### UART terminal:
-* lineterm.exe COM_port_number baudrate
+``` cmd
+lineterm.exe COM_port_number baudrate
+```
 ### Linux (all the necessary utilities in busybox):
 #### File forwarding:
+``` sh
 * ./net_wr.sh filename.lua | nc ip_address 23
 * ./tftp_lua.sh ip_address filename.lua
 * tftp -p -l local_file -r remote_file ip_address
 * tftp -g -l local_file -r remote_file ip_address
+```
 #### Telnet:
+``` sh
 * telnet ip_address
 * nc ip_address 23
+```
 
 ## Links:
 ### Far manager official site
