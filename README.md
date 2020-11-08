@@ -30,15 +30,15 @@ lineterm.exe COM_port_number baudrate
 ### Linux (all the necessary utilities in busybox):
 #### File forwarding:
 ``` sh
-* ./net_wr.sh filename.lua | nc ip_address 23
-* ./tftp_lua.sh ip_address filename.lua
-* tftp -p -l local_file -r remote_file ip_address
-* tftp -g -l local_file -r remote_file ip_address
+net_wr.sh filename.lua | nc ip_address 23
+tftp_lua.sh ip_address filename.lua
+tftp -p -l local_file -r remote_file ip_address
+tftp -g -l local_file -r remote_file ip_address
 ```
 #### Telnet:
 ``` sh
-* telnet ip_address
-* nc ip_address 23
+telnet ip_address
+nc ip_address 23
 ```
 
 ## Links:
