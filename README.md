@@ -7,9 +7,9 @@ Telnet server with support for simple linux commands: ls, cat, rm, mem, reboot.
 Tftp server support oktet mode only.
 The "~" character in the file name was used to autorun files in ESP, implemented in init.lua.
 
-## Command line formats (all files in one folder):
-### Windows (more needed utils: lineterm.exe, netterm.exe, sed.exe, busybox.exe):
-#### File forwarding:
+## Command line formats
+### Windows (more needed utils: lineterm.exe, netterm.exe, sed.exe, busybox.exe)
+#### File forwarding
 ``` cmd
 lua_wr.cmd filename.lua
 net_wr.cmd filename.lua | netterm.exe ip_address 23
@@ -18,14 +18,21 @@ tftp_lua.cmd ip_address filename.lua
 tftp -i ip_address PUT filename
 tftp -i ip_address GET filename
 ```
-#### Telnet:
+#### Telnet
 ``` cmd
 * netterm.exe ip_address 23
 * busybox.exe nc ip_address 23
 ```
-#### UART terminal:
+#### UART terminal
 ``` cmd
 lineterm.exe COM_port_number baudrate
+```
+#### Clone and Build
+``` cmd
+git clone https://github.com/semper-7/FarNodeMCU
+cd FarNodeMCU
+lineterm.bat
+netterm.bat
 ```
 ### Linux (all the necessary utilities in busybox):
 #### File forwarding:
@@ -46,3 +53,5 @@ nc ip_address 23
 * https://www.farmanager.com
 ### Port for linux:
 * https://github.com/elfmz/far2l
+### MASM32 SDK official site
+https://www.masm32.com/
