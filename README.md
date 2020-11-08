@@ -20,6 +20,8 @@ Support for linux user: net_wr.sh and tftp_wr.sh. FAR manager for Linux: https:/
 #### Telnet:
 * netterm.exe ip_address 23
 * busybox.exe nc ip_address 23
+#### UART terminal:
+* lineterm.exe COM_port_number baudrate
 ### Linux (all the necessary utilities in busybox):
 #### File forwarding:
 * ./net_wr.sh filename.lua | nc ip_address 23
