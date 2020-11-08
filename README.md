@@ -22,8 +22,6 @@ The "~" character in the file name was used to autorun files in ESP, implemented
 #### UART terminal:
 * lineterm.exe COM_port_number baudrate
 ### Linux (all the necessary utilities in busybox):
-#### Far manager
-* https://github.com/elfmz/far2l
 #### File forwarding:
 * ./net_wr.sh filename.lua | nc ip_address 23
 * ./tftp_lua.sh ip_address filename.lua
