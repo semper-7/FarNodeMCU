@@ -8,24 +8,23 @@ Tftp server support oktet mode only.
 The "~" character in the file name was used to autorun files in ESP, implemented in init.lua.
 
 ## Command line formats
-### Windows (more needed utils: lineterm.exe, netterm.exe, sed.exe, busybox.exe)
+### Windows (more needed utils: lineterm.exe, netterm.exe, busybox.exe)
 #### File forwarding
 ``` cmd
 lua_wr.cmd file.lua
-net_wr.cmd file.lua | netterm.exe ip_address 23
-net_wr.cmd file.lua | busybox.exe nc ip_address 23
+net_wr.cmd file.lua | busybox nc ip_address 23
 tftp_lua.cmd ip_address file.lua
 tftp -i ip_address PUT filename
 tftp -i ip_address GET filename
 ```
 #### Telnet
 ``` cmd
-* netterm.exe ip_address 23
-* busybox.exe nc ip_address 23
+* netterm ip_address 23
+* busybox nc ip_address 23
 ```
 #### UART terminal
 ``` cmd
-lineterm.exe COM_port_number baudrate
+lineterm COM_port_number baudrate
 ```
 #### Clone and Build
 ``` cmd
