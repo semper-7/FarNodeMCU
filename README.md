@@ -1,5 +1,5 @@
 # FarNodeMCU
-Project for ESP8266 NodeMCU. First of all, we created an environment for developing and writing lua files based on FAR manager.
+Project for ESP8266 NodeMCU. First of all, we created an environment for developing and writing lua files based on FAR manager. The colorer plugin FAR supports LUA syntax.
 To solve the problem, utilities for working with ESP were written in MASM32: lineterm.exe - mini console terminal, netterm.exe - TCP terminal is a simplified analog of nc in linux. Their size is only 3072 bytes.
 Cmd and sh scripts are also created for writing lua scripts to ESP: lua_wr, net_wr and tftp_lua.
 Telnet~.lua and tftp~.lua compatible servers were written accordingly.
@@ -24,7 +24,7 @@ tftp -i ip_address GET filename
 ```
 #### UART terminal
 ``` cmd
-lineterm COM_port_number baudrate
+lineterm COM_port_number 115200
 ```
 #### Clone and Build
 ``` cmd
@@ -33,10 +33,11 @@ cd FarNodeMCU
 lineterm.bat
 netterm.bat
 ```
-### Linux (all the necessary utilities in busybox):
+### Linux:
 #### File forwarding:
 ``` sh
-net_wr.sh file.lua | nc ip_address 23
+lua_wr.sh file.lua | /dev/ttyUSB0
+lua_wr.sh file.lua | nc ip_address 23
 tftp_lua.sh ip_address file.lua
 tftp -p -l local_file -r remote_file ip_address
 tftp -g -l local_file -r remote_file ip_address
@@ -46,7 +47,11 @@ tftp -g -l local_file -r remote_file ip_address
 telnet ip_address
 nc ip_address 23
 ```
-
+#### UART terminal
+``` cmd
+stty 115200 -F /dev/ttyUSB0 raw -echo
+cat /dev/ttyUSB0 | tee term.log
+```
 ## Links:
 ### Far manager official site
 * https://www.farmanager.com
