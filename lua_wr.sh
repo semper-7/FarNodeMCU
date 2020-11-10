@@ -1,6 +1,7 @@
 #!/bin/sh
 if [ -z "$1" ] ; then
- echo "Command line: net_wr.sh filename.lua | nc IP_address 23"
+ echo "Command line: lua_wr.sh filename.lua | \/dev\/ttyUSB0"
+ echo "Command line: lua_wr.sh filename.lua | nc IP_address 23"
  sleep 0; exit
 fi
 sleep 1
