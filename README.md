@@ -48,7 +48,7 @@ telnet ip_address
 nc ip_address 23
 ```
 #### UART terminal
-``` cmd
+``` sh
 stty 115200 -F /dev/ttyUSB0 raw -echo
 cat /dev/ttyUSB0 | tee term.log
 ```
