@@ -60,5 +60,4 @@ s:listen(21,function(c)
  end)
  c:send("220 Welcome to NodeMCU FTP server\n")
 end)
-
 print(("FTP server started (%d mem free, %s)"):format(node.heap(), wifi.sta.getip()))
